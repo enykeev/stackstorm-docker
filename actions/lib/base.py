@@ -15,7 +15,7 @@ class DockerBasePythonAction(Action):
 
         # Assign sane defaults.
         if self.config['version'] is None:
-            self.config['version'] = '1.13'
+            self.config['version'] = '1.24'
         if self.config['url'] is None:
             self.config['url'] = 'unix://var/run/docker.sock'
 
