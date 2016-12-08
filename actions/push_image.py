@@ -1,3 +1,5 @@
+import sys
+
 from lib.base import DockerBasePythonAction
 
 
@@ -8,4 +10,4 @@ __all__ = [
 
 class DockerPushImageAction(DockerBasePythonAction):
     def run(self, repo, tag=None, insecure_registry=False):
-        return self.wrapper.push(repo=repo, tag=tag, insecure_registry=insecure_registry)
+        return self.call('push', repo=repo, tag=tag, insecure_registry=insecure_registry)
