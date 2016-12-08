@@ -1,0 +1,73 @@
+---
+name: run
+runner_type: run-python
+description: Run docker container. Equivalent to docker run.
+enabled: true
+entry_point: run.py
+parameters:
+  image:
+    type: string
+    description: The image to run
+    required: true
+  command:
+    type: string
+    description: The command to be run in the container
+  hostname:
+    type: string
+    description: Optional hostname for the container
+  user:
+    type: string
+    description: Username or UID
+  detach:
+    type: boolean
+    description: 'Detached mode: run container in the background and print new container Id'
+  stdin_open:
+    type: boolean
+    description: Keep STDIN open even if not attached
+  tty:
+    type: boolean
+    description: Allocate a pseudo-TTY
+  mem_limit:
+    type: string
+    description: 'Memory limit (format: [number][optional unit], where unit = b, k, m, or g)'
+  ports:
+    type: array
+    items:
+      type: integer
+    description: A list of port numbers
+  dns:
+    type: array
+    items:
+      type: string
+    description: DNS name servers
+  volumes:
+    type: string
+  volumes_from:
+    type: string
+    description: List of container names or Ids to get volumes from. Optionally a single string joining container id's with commas
+  network_disabled:
+    type: boolean
+    description: Disable networking
+  name:
+    type: string
+    description: A name for the container
+  entrypoint:
+    type: string
+    description: An entrypoint
+  working_dir:
+    type: string
+    description: Path to the working directory
+  domainname:
+    type: string
+    description: Set custom DNS search domains
+  memswap_limit:
+    type: integer
+  mac_address:
+    type: string
+    description: The Mac Address to assign the container
+  volume_driver:
+    type: string
+    description: The name of a volume driver/plugin.
+  stop_signal:
+    type: string
+    description: The stop signal to use to stop the container (e.g. SIGINT).
