@@ -7,8 +7,11 @@ __all__ = [
 
 
 class DockerPullImageAction(DockerBasePythonAction):
-    def run(self, repo, tag=None, insecure_registry=False,
+    def run(self, repo, tag=None, all_tags=None, insecure_registry=False,
             auth_username_override=None, auth_password_override=None):
+
+        if all_tags:
+            tag = None
 
         if auth_username_override and auth_password_override:
             auth_config = {

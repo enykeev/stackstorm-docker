@@ -12,6 +12,11 @@ parameters:
   tag:
     type: string
     description: Tag to use for this image (optional).
+    default: latest
+  all_tags:
+    type: boolean
+    description: Pull all tags for the image. Overrides 'tag' property. Consider increasing timeout.
+    default: false
   insecure_registry:
     type: boolean
     description: Allow image to be pushed to insecure registry (http vs https).
