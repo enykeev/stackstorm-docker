@@ -15,7 +15,7 @@ class DockerPullImageAction(DockerBasePythonAction):
             auth_config = {}
             auth_config['username'] = auth_username_override
             auth_config['password'] = auth_password_override
-            return self.call('pull', repo=repo, tag=tag, insecure_registry=insecure_registry,
+            return self.call('pull', repo, tag=tag, insecure_registry=insecure_registry,
                              auth_config=auth_config)
         else:
-            return self.call('pull', repo=repo, tag=tag, insecure_registry=insecure_registry)
+            return self.call('pull', repo, tag=tag, insecure_registry=insecure_registry)
