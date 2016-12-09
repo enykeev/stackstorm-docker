@@ -1,0 +1,33 @@
+---
+name: exec
+runner_type: run-python
+description: Execute inside running docker container. Equivalent to docker exec.
+enabled: true
+entry_point: exec.py
+parameters:
+  container:
+    type: string
+    description: Target container where exec instance will be created
+    required: true
+  cmd:
+    type: string
+    description: Command to be executed
+    required: true
+  stdout:
+    type: boolean
+    description: Attach to stdout of the exec command if true.
+    default: true
+  stderr:
+    type: boolean
+    description: Attach to stderr of the exec command if true.
+    default: true
+  tty:
+    type: boolean
+    description: Allocate a pseudo-TTY
+  user:
+    type: string
+    description: Username or UID
+    default: root
+  detach:
+    type: boolean
+    description: 'Detached mode: run container in the background and print new container Id'
