@@ -1,0 +1,23 @@
+---
+name: rm
+runner_type: run-python
+description: Pull docker image action. Equivalent to docker pull.
+enabled: true
+entry_point: rm.py
+parameters:
+  container:
+    type: string
+    description: The container to remove.
+    required: true
+  remove_volumes:
+    type: boolean
+    description: Remove the volumes associated with the container.
+    default: false
+  link:
+    type: boolean
+    description: Remove the specified link and not the underlying container.
+    default: false
+  force:
+    type: boolean
+    description: Force the removal of a running container (uses SIGKILL).
+    default: false
